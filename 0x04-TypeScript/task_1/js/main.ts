@@ -5,14 +5,15 @@ interface Teacher {
   fullTimeEmployee: boolean;
   yearsOfExperience?: number;
   location: string;
-  [key: string]: any; // for additional attributes like contract
+  [key: string]: any; // allow extra attributes like contract
 }
 
-interface Directors extends Teacher {
+// Correct name: singular "Director"
+interface Director extends Teacher {
   numberOfReports: number;
 }
 
-const director1: Directors = {
+const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
@@ -21,3 +22,4 @@ const director1: Directors = {
 };
 
 console.log(director1);
+
