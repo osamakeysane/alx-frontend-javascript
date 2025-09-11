@@ -1,23 +1,21 @@
 // Existing Teacher interface from Task 1
 interface Teacher {
-  readonly firstName: string; // only set when initialized
-  readonly lastName: string; // only set when initialized
+  firstName: string;
+  lastName: string;
   fullTimeEmployee: boolean;
-  yearsOfExperience?: number; // optional
+  yearsOfExperience?: number;
   location: string;
-  [key: string]: any; // allow any additional attributes
+  [key: string]: any; // for additional attributes like contract
 }
 
-// Task 2: Directors interface extends Teacher
 interface Directors extends Teacher {
-  numberOfReports: number; // required attribute
+  numberOfReports: number;
 }
 
-// Example usage
 const director1: Directors = {
-  firstName: "John",
-  lastName: "Doe",
-  location: "London",
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
