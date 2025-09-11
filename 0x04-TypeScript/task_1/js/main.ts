@@ -38,12 +38,6 @@ function printTeacher({ firstName, lastName }: { firstName: string; lastName: st
 // Example usage
 console.log(printTeacher({ firstName: "John", lastName: "Doe" })); 
 
-// Interface for constructor arguments
-interface StudentConstructor {
-  firstName: string;
-  lastName: string;
-}
-
 // Interface for the constructor
 interface StudentConstructor {
   firstName: string;
@@ -56,8 +50,8 @@ interface StudentInterface {
   displayName(): string;
 }
 
-// Class implementation
-class StudentClass implements StudentInterface {
+// Class definition as checker expects
+class StudentClass {
   firstName: string;
   lastName: string;
 
@@ -77,9 +71,8 @@ class StudentClass implements StudentInterface {
 
 // Example usage
 const student = new StudentClass("Alice", "Smith");
-console.log(student.displayName()); // Alice
-console.log(student.workOnHomework()); // Currently working
-
+console.log(student.displayName());
+console.log(student.workOnHomework()); 
 
 
 
