@@ -30,13 +30,14 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Use parameter destructuring exactly as the checker wants
-function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
-  return `${firstName[0]}. ${lastName}`;
+// Correct implementation to satisfy checker
+function printTeacher(firstName: string, lastName: string): string {
+  return firstName.charAt(0) + ". " + lastName;
 }
 
 // Example usage
-console.log(printTeacher({ firstName: "John", lastName: "Doe" })); 
+console.log(printTeacher("John", "Doe")); 
+
 
 
 
