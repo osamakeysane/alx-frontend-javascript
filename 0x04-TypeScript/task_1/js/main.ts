@@ -1,19 +1,25 @@
+// Existing Teacher interface from Task 1
 interface Teacher {
   readonly firstName: string; // only set when initialized
   readonly lastName: string; // only set when initialized
-  fullTimeEmployee: boolean; // always required
+  fullTimeEmployee: boolean;
   yearsOfExperience?: number; // optional
-  location: string; // always required
-  [propName: string]: any; // allows extra properties like "contract"
+  location: string;
+  [key: string]: any; // allow any additional attributes
 }
 
-// Example
-const teacher3: Teacher = {
+// Task 2: Directors interface extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number; // required attribute
+}
+
+// Example usage
+const director1: Directors = {
   firstName: "John",
-  fullTimeEmployee: false,
   lastName: "Doe",
   location: "London",
-  contract: false,
+  fullTimeEmployee: true,
+  numberOfReports: 17,
 };
 
-console.log(teacher3);
+console.log(director1);
