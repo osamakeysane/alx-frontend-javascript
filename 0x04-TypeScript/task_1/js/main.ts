@@ -44,18 +44,24 @@ interface StudentConstructor {
   lastName: string;
 }
 
-// Interface for class methods
-interface StudentClassInterface {
+// Interface for the constructor
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
+// Interface for the class
+interface StudentInterface {
   workOnHomework(): string;
   displayName(): string;
 }
 
-// StudentClass implementation
-class StudentClass implements StudentClassInterface {
+// Class implementation
+class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
 
-  constructor({ firstName, lastName }: StudentConstructor) {
+  constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
@@ -70,10 +76,9 @@ class StudentClass implements StudentClassInterface {
 }
 
 // Example usage
-const student1 = new StudentClass({ firstName: "Alice", lastName: "Smith" });
-
-console.log(student1.displayName()); // Alice
-console.log(student1.workOnHomework()); // Currently working
+const student = new StudentClass("Alice", "Smith");
+console.log(student.displayName()); // Alice
+console.log(student.workOnHomework()); // Currently working
 
 
 
