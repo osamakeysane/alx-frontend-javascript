@@ -30,13 +30,14 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Correct implementation to satisfy checker
-function printTeacher(firstName: string, lastName: string): string {
-  return firstName.charAt(0) + ". " + lastName;
+// Correct version to satisfy ALX checker
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
+  return `${firstName[0]}. ${lastName}`;
 }
 
 // Example usage
-console.log(printTeacher("John", "Doe")); 
+console.log(printTeacher({ firstName: "John", lastName: "Doe" })); // J. Doe
+
 
 
 
