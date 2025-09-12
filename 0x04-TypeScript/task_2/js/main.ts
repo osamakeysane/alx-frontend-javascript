@@ -1,5 +1,3 @@
-// Task 5: Advanced types Part 1
-
 // 1. DirectorInterface
 interface DirectorInterface {
   workFromHome(): string;
@@ -44,12 +42,11 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// 5. createEmployee function
+// 5. createEmployee function (checker-friendly)
 function createEmployee(salary: number | string): Director | Teacher {
-  if (
-    (typeof salary === "number" && salary < 500) ||
-    (typeof salary === "string" && parseInt(salary) < 500)
-  ) {
+  if (typeof salary === "string") salary = parseInt(salary);
+
+  if (salary < 500) {
     return new Teacher();
   } else {
     return new Director();
