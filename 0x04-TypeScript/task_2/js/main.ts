@@ -80,16 +80,11 @@ console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 
 // Task 7: String literal types
 
-// 1. String literal type
-type Subjects = "Math" | "History";
+export type Subjects = "Math" | "History";
 
-// 2. teachClass function
-function teachClass(todayClass: Subjects): string {
-  if (todayClass === "Math") {
-    return "Teaching Math";
-  } else if (todayClass === "History") {
-    return "Teaching History";
-  }
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") return "Teaching Math";
+  return "Teaching History";
 }
 
 // Example usage
