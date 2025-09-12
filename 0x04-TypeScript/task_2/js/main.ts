@@ -80,18 +80,19 @@ console.log(executeWork(createEmployee(1000))); // Getting to director tasks
 
 // Task 7: String literal types
 
-// 1. String literal type
+// 1. Define the string literal type
 type Subjects = "Math" | "History";
 
-// 2. teachClass function with parameter typed explicitly as Subjects
+// 2. Function teachClass with parameter explicitly typed as Subjects
 function teachClass(todayClass: Subjects): string {
   if (todayClass === "Math") {
     return "Teaching Math";
-  } else if (todayClass === "History") {
-    return "Teaching History";
-  } else {
-    return "Invalid class"; // Optional safety fallback
   }
+  if (todayClass === "History") {
+    return "Teaching History";
+  }
+  // Optional fallback (won't actually be called since Subjects only allows Math/History)
+  return "Unknown class";
 }
 
 // Example usage
